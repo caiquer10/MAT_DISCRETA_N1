@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Piada Matemática</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: blue;
+
+        }
+
+        .img {
+            width: 20px;
+            height: 20pxh;
+            background: #f5f105f1;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <p id="joke"><strong>MATEMATICA DISCRETA</strong> <br>uma mulher que é APAIXONADA por matematica, acaba de fazer sua ultrassom no hospital,<br> logo ela corre para celular
+        e vai ligar para seus pais, quando informa seus pais, eles pergutam :<strong>é menino ou
+        menina?</strong></p>
+    <div class="img"><img src="piada.jpg"></div>
+
+    <select id="options">
+        <option value="SIM">SIM</option>
+        <option value="MENINO">MENINO</option>
+        <option value="MENINA">MENINA</option>
+        <option value="NÃO">NÃO</option>
+    </select>
+    <button onclick="checkOption()">Verificar</button>
+    <p id="result"></p>
+
+    <script>
+        function checkOption() {
+            var select = document.getElementById("options");
+            var result = document.getElementById("result");
+            var selectedOption = select.options[select.selectedIndex].value;
+
+            if (["SIM", "MENINO", "MENINA"].includes(selectedOption)) {
+                result.innerHTML = "Verdadeiro";
+            } else if (selectedOption === "NÃO") {
+                result.innerHTML = "Falso";
+            } else {
+                result.innerHTML = "Opção inválida. Por favor, escolha entre: SIM, MENINO, MENINA, NÃO";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
